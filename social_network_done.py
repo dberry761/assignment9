@@ -70,3 +70,18 @@ network.add_friendship("Alex", "Taylor")
 network.add_friendship("Jordan", "Johnny")  # person doesn't exist
 
 network.print_network()
+
+
+"""
+Design Memo:
+
+For this assignment, I created two classes: Person and SocialNetwork. The Person class represents each individual in the network. Each Person object stores the person’s name and a list of their friends. The friends list contains other Person objects. I added an add_friend() method that adds a friend to the list while checking to make sure the same friend is not added more than once.
+
+The SocialNetwork class manages the entire network. It uses a dictionary called people where the key is the person’s name and the value is the Person object. I chose a dictionary because it allows fast lookup when adding friendships or checking if a person already exists.
+
+The add_person() method creates a new Person and adds it to the dictionary. It also checks for duplicate names and prints a message if the person is already in the network. The add_friendship() method creates a bidirectional relationship by adding each person to the other’s friends list. It also checks if both people exist before creating the friendship and prints an error if one of them is missing.
+
+The print_network() method loops through the dictionary and prints each person’s name along with the names of their friends.
+
+I tested my program with more than six people, multiple friendships, duplicate entries, and a case where a friendship was attempted with a person who does not exist.
+"""
